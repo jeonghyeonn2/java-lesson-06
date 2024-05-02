@@ -7,35 +7,35 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
- * í•´ë‹¹ í´ë˜ìŠ¤ëŠ” ëŒë‹¤ í‘œí˜„ì‹ì— ëŒ€í•´ ì¡°ê¸ˆ ë” ì¹œìˆ™í•´ì§€ê¸° ìœ„í•´ êµ¬ì„±ëœ ë¬¸ì œì…ë‹ˆë‹¤.
+ * ÇØ´ç Å¬·¡½º´Â ¶÷´Ù Ç¥Çö½Ä¿¡ ´ëÇØ Á¶±İ ´õ Ä£¼÷ÇØÁö±â À§ÇØ ±¸¼ºµÈ ¹®Á¦ÀÔ´Ï´Ù.
  * <p>
- * ë¯¸ë¦¬ ì„ ì–¸ëœ ëŒë‹¤ í‘œí˜„ì‹ì„ ì‚¬ìš©í•˜ì—¬, ì˜ˆì œë¡œ ì£¼ì–´ì§„ ë©”ì„œë“œì™€ ë™ì¼í•œ ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ëŠ” ì½”ë“œë¥¼ ì‘ì„±í•´ë³´ì„¸ìš”.
+ * ¹Ì¸® ¼±¾ğµÈ ¶÷´Ù Ç¥Çö½ÄÀ» »ç¿ëÇÏ¿©, ¿¹Á¦·Î ÁÖ¾îÁø ¸Ş¼­µå¿Í µ¿ÀÏÇÑ ±â´ÉÀ» ¼öÇàÇÏ´Â ÄÚµå¸¦ ÀÛ¼ºÇØº¸¼¼¿ä.
  */
 public class LambdaExample {
-    // ì´ ë³€ìˆ˜ëŠ” ìƒìˆ˜ì´ê¸°ì— ëŒ€ë¬¸ìë¡œ ì„ ì–¸í•©ë‹ˆë‹¤.
+    // ÀÌ º¯¼ö´Â »ó¼öÀÌ±â¿¡ ´ë¹®ÀÚ·Î ¼±¾ğÇÕ´Ï´Ù.
     private static final Random RANDOM = new Random();
 
-    // ì‹¤ìŠµì— ì‚¬ìš©ë  ìˆ«ìë“¤ì…ë‹ˆë‹¤.
+    // ½Ç½À¿¡ »ç¿ëµÉ ¼ıÀÚµéÀÔ´Ï´Ù.
     private static final int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    // Supplierì€ ì œë„ˆë¦­ìŠ¤ì— í¬í•¨ëœ íƒ€ì…ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜í˜• ì¸í„°í˜ì´ìŠ¤ì…ë‹ˆë‹¤.
-    // ì´ëŠ” ë‹¤ìŒê³¼ ê°™ì€ ì½”ë“œë¥¼ ì¶•ì•½í•œ í˜•íƒœì…ë‹ˆë‹¤ :
+    // SupplierÀº Á¦³Ê¸¯½º¿¡ Æ÷ÇÔµÈ Å¸ÀÔÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½ºÀÔ´Ï´Ù.
+    // ÀÌ´Â ´ÙÀ½°ú °°Àº ÄÚµå¸¦ Ãà¾àÇÑ ÇüÅÂÀÔ´Ï´Ù :
     // public int supplyNumber() {
     //    return numbers[RANDOM.nextInt(numbers.length)];
     // }
     private static final Supplier<Integer> numberSupplier = () -> numbers[RANDOM.nextInt(numbers.length)];
 
-    // Functionì€ ì œë„ˆë¦­ìŠ¤ì— í¬í•¨ëœ íƒ€ì…ì„ ë°›ì•„ ì œë„ˆë¦­ìŠ¤ì— í¬í•¨ëœ íƒ€ì…ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜í˜• ì¸í„°í˜ì´ìŠ¤ì…ë‹ˆë‹¤.
-    // ì´ ëŒë‹¤ ì œë„ˆë¦­ìŠ¤ëŠ” <Integer, Integer>ì´ê¸°ì— Integerë¥¼ ë°›ì•„ Integerë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
-    // í•´ë‹¹ ëŒë‹¤ í‘œí˜„ì‹ì€ ë‹¤ìŒê³¼ ê°™ì€ ì½”ë“œë¥¼ ì¶•ì•½í•œ í˜•íƒœì…ë‹ˆë‹¤ :
+    // FunctionÀº Á¦³Ê¸¯½º¿¡ Æ÷ÇÔµÈ Å¸ÀÔÀ» ¹Ş¾Æ Á¦³Ê¸¯½º¿¡ Æ÷ÇÔµÈ Å¸ÀÔÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½ºÀÔ´Ï´Ù.
+    // ÀÌ ¶÷´Ù Á¦³Ê¸¯½º´Â <Integer, Integer>ÀÌ±â¿¡ Integer¸¦ ¹Ş¾Æ Integer¸¦ ¹İÈ¯ÇÕ´Ï´Ù.
+    // ÇØ´ç ¶÷´Ù Ç¥Çö½ÄÀº ´ÙÀ½°ú °°Àº ÄÚµå¸¦ Ãà¾àÇÑ ÇüÅÂÀÔ´Ï´Ù :
     // public int convertToNegative(int number) {
     //    return -number;
     // }
     private static final Function<Integer, Integer> negativeConverter = (number) -> -number;
 
-    // Consumerì€ ì œë„ˆë¦­ìŠ¤ì— í¬í•¨ëœ íƒ€ì…ì„ ë°›ì•„ ì•„ë¬´ê²ƒë„ ë°˜í™˜í•˜ì§€ ì•ŠëŠ” í•¨ìˆ˜í˜• ì¸í„°í˜ì´ìŠ¤ì…ë‹ˆë‹¤.
-    // ì´ ëŒë‹¤ ì œë„ˆë¦­ìŠ¤ëŠ” <Integer>ì´ê¸°ì— Integerë¥¼ ë°›ìŠµë‹ˆë‹¤.
-    // í•´ë‹¹ ëŒë‹¤ í‘œí˜„ì‹ì€ ë‹¤ìŒê³¼ ê°™ì€ ì½”ë“œë¥¼ ì¶•ì•½í•œ í˜•íƒœì…ë‹ˆë‹¤ :
+    // ConsumerÀº Á¦³Ê¸¯½º¿¡ Æ÷ÇÔµÈ Å¸ÀÔÀ» ¹Ş¾Æ ¾Æ¹«°Íµµ ¹İÈ¯ÇÏÁö ¾Ê´Â ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½ºÀÔ´Ï´Ù.
+    // ÀÌ ¶÷´Ù Á¦³Ê¸¯½º´Â <Integer>ÀÌ±â¿¡ Integer¸¦ ¹Ş½À´Ï´Ù.
+    // ÇØ´ç ¶÷´Ù Ç¥Çö½ÄÀº ´ÙÀ½°ú °°Àº ÄÚµå¸¦ Ãà¾àÇÑ ÇüÅÂÀÔ´Ï´Ù :
     // public void printNumber(int number) {
     //    System.out.println(number);
     // }
@@ -44,9 +44,9 @@ public class LambdaExample {
         System.out.println(number);
     };
 
-    // BiFunctionì€ ì œë„ˆë¦­ìŠ¤ì— í¬í•¨ëœ íƒ€ì…ì„ ë‘ ê°œ ë°›ì•„ ì œë„ˆë¦­ìŠ¤ì— í¬í•¨ëœ íƒ€ì…ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜í˜• ì¸í„°í˜ì´ìŠ¤ì…ë‹ˆë‹¤.
-    // ì´ ëŒë‹¤ ì œë„ˆë¦­ìŠ¤ëŠ” <Integer, Integer, Integer>ì´ê¸°ì— Integerë¥¼ ë‘ ê°œ ë°›ì•„ Integerë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
-    // í•´ë‹¹ ëŒë‹¤ í‘œí˜„ì‹ì€ ë‹¤ìŒê³¼ ê°™ì€ ì½”ë“œë¥¼ ì¶•ì•½í•œ í˜•íƒœì…ë‹ˆë‹¤ :
+    // BiFunctionÀº Á¦³Ê¸¯½º¿¡ Æ÷ÇÔµÈ Å¸ÀÔÀ» µÎ °³ ¹Ş¾Æ Á¦³Ê¸¯½º¿¡ Æ÷ÇÔµÈ Å¸ÀÔÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½ºÀÔ´Ï´Ù.
+    // ÀÌ ¶÷´Ù Á¦³Ê¸¯½º´Â <Integer, Integer, Integer>ÀÌ±â¿¡ Integer¸¦ µÎ °³ ¹Ş¾Æ Integer¸¦ ¹İÈ¯ÇÕ´Ï´Ù.
+    // ÇØ´ç ¶÷´Ù Ç¥Çö½ÄÀº ´ÙÀ½°ú °°Àº ÄÚµå¸¦ Ãà¾àÇÑ ÇüÅÂÀÔ´Ï´Ù :
     // public int adjustNumber(int number, int adjustment) {
     //    return number + adjustment;
     // }
@@ -60,13 +60,13 @@ public class LambdaExample {
         int example = exampleResult(first, second);
         int lambda = lambdaResult(first, second);
         if (example == lambda) {
-            System.out.println("ì •ë‹µì…ë‹ˆë‹¤!");
+            System.out.println("Á¤´äÀÔ´Ï´Ù!");
         } else {
-            System.out.println("ì˜¤ë‹µì…ë‹ˆë‹¤!");
+            System.out.println("¿À´äÀÔ´Ï´Ù!");
         }
     }
 
-    // ì´ ë©”ì„œë“œëŠ” ë‘ ê°œì˜ ì •ìˆ˜ë¥¼ ë°›ì•„, ë‘ë²ˆì§¸ ê°’ì„ ìŒìˆ˜ë¡œ ë³€í™˜í•˜ê³ , ì´ë¥¼ ì¶œë ¥í•œ ë‹¤ìŒ ë‘ ê°’ì„ ë”í•œ ê°’ì„ ë°˜í™˜í•©ë‹ˆë‹¤.
+    // ÀÌ ¸Ş¼­µå´Â µÎ °³ÀÇ Á¤¼ö¸¦ ¹Ş¾Æ, µÎ¹øÂ° °ªÀ» À½¼ö·Î º¯È¯ÇÏ°í, ÀÌ¸¦ Ãâ·ÂÇÑ ´ÙÀ½ µÎ °ªÀ» ´õÇÑ °ªÀ» ¹İÈ¯ÇÕ´Ï´Ù.
     private static int exampleResult(int base, int delta) {
         int negative = -delta;
         int adjusted = base + delta;
@@ -74,12 +74,18 @@ public class LambdaExample {
         return adjusted;
     }
 
-    // ì´ ë©”ì„œë“œëŠ” exampleResultì™€ ë™ì¼í•œ ë™ì‘ì„ ìœ„ì— ì„ ì–¸ëœ ëŒë‹¤ í‘œí˜„ì‹ì„ ì‚¬ìš©í•˜ì—¬ ìˆ˜í–‰í•´ì•¼ í•©ë‹ˆë‹¤.
-    // ê° ëŒë‹¤ëŠ” ì„œë¡œ ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ê°’ì„ ìˆ˜ìš©í•œë‹¤ëŠ”ê²ƒì„ ìŠì§€ ë§ˆì„¸ìš”.
-    // Function / BiFunctionì€ applyë¥¼, ConsumerëŠ” acceptë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.
+    // ÀÌ ¸Ş¼­µå´Â exampleResult¿Í µ¿ÀÏÇÑ µ¿ÀÛÀ» À§¿¡ ¼±¾ğµÈ ¶÷´Ù Ç¥Çö½ÄÀ» »ç¿ëÇÏ¿© ¼öÇàÇØ¾ß ÇÕ´Ï´Ù.
+    // °¢ ¶÷´Ù´Â ¼­·Î ´Ù¸¥ ÀÌ¸§À¸·Î °ªÀ» ¼ö¿ëÇÑ´Ù´Â°ÍÀ» ÀØÁö ¸¶¼¼¿ä.
+    // Function / BiFunctionÀº apply¸¦, Consumer´Â accept¸¦ »ç¿ëÇÕ´Ï´Ù.
     private static int lambdaResult(int base, int delta) {
 
-        throw new UnsupportedOperationException("ì´ ì½”ë“œë¥¼ ì§€ìš°ê³ , ì •ë‹µì„ ì‘ì„±í•˜ì„¸ìš”.");
+        int negativeDelta = negativeConverter.apply(delta);
+
+        printer.accept(negativeDelta);
+
+        int adjusted= adjuster.apply(base,delta);
+
+        return adjusted;
     }
 
 }

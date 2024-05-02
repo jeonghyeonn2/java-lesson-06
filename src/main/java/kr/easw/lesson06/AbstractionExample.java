@@ -1,10 +1,10 @@
 package kr.easw.lesson06;
 
 /**
- * í•´ë‹¹ í´ëž˜ìŠ¤ëŠ” ì¶”ìƒ í´ëž˜ìŠ¤ì— ëŒ€í•´ ì¡°ê¸ˆ ë” ì¹œìˆ™í•´ì§€ê¸° ìœ„í•´ êµ¬ì„±ëœ ë¬¸ì œìž…ë‹ˆë‹¤.
+ * ÇØ´ç Å¬·¡½º´Â Ãß»ó Å¬·¡½º¿¡ ´ëÇØ Á¶±Ý ´õ Ä£¼÷ÇØÁö±â À§ÇØ ±¸¼ºµÈ ¹®Á¦ÀÔ´Ï´Ù.
  *
- * Vehicle í´ëž˜ìŠ¤ë¥¼ ì°¸ê³ í•˜ì—¬, Car, Bicycle, Motorcycle í´ëž˜ìŠ¤ë¥¼ êµ¬í˜„í•˜ë„ë¡ ë§Œë“¤ì–´ë³´ì„¸ìš”.
- * í•´ë‹¹ ì˜ˆì œëŠ” ì˜ë„ì ìœ¼ë¡œ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ë„ë¡ êµ¬ì„±ë˜ì—ˆìœ¼ë©°, Vehicleì„ ìƒì†í•˜ì§€ ì•Šì€ í´ëž˜ìŠ¤ëŠ” ì˜¤ë¥˜ê°€ ë°œìƒí•©ë‹ˆë‹¤.
+ * Vehicle Å¬·¡½º¸¦ Âü°íÇÏ¿©, Car, Bicycle, Motorcycle Å¬·¡½º¸¦ ±¸ÇöÇÏµµ·Ï ¸¸µé¾îº¸¼¼¿ä.
+ * ÇØ´ç ¿¹Á¦´Â ÀÇµµÀûÀ¸·Î ¿À·ù°¡ ¹ß»ýÇÏµµ·Ï ±¸¼ºµÇ¾úÀ¸¸ç, VehicleÀ» »ó¼ÓÇÏÁö ¾ÊÀº Å¬·¡½º´Â ¿À·ù°¡ ¹ß»ýÇÕ´Ï´Ù.
  */
 public class AbstractionExample {
 
@@ -14,12 +14,12 @@ public class AbstractionExample {
         new Motorcycle("Motorcycle").run();
     }
 
-    // ì¶”ìƒ í´ëž˜ìŠ¤ëŠ” ì¸í„°íŽ˜ì´ìŠ¤ì™€ ë¹„ìŠ·í•œ ê°œë…ì´ì§€ë§Œ, ì¸í„°íŽ˜ì´ìŠ¤ì™€ ë‹¬ë¦¬ ë³€ìˆ˜ë¥¼ ê°€ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
-    // ë˜í•œ, ì¸í„°íŽ˜ì´ìŠ¤ì™€ ë‹¬ë¦¬ ëª¸ì²´(body)ê°€ ìžˆëŠ” ë©”ì„œë“œë¥¼ ê°€ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. (ì´ëŠ” ìžë°” 8ë¶€í„° ì™„í™”ë˜ì–´ ì¸í„°íŽ˜ì´ìŠ¤ëŠ” default í‚¤ì›Œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ëª¸ì²´ê°€ ìžˆëŠ” ë©”ì„œë“œë¥¼ ê°€ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.)
-    // ì¶”ìƒ í´ëž˜ìŠ¤ëŠ” ì¼ë°˜ í´ëž˜ìŠ¤ì™€ ê±°ì˜ ê°™ì§€ë§Œ, ì¶”ìƒ ë©”ì„œë“œ(abstract)ë¥¼ ì„ ì–¸í•  ìˆ˜ ìžˆëŠ”ê²ƒê³¼ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ëŠ” ê²ƒì´ ë‹¤ë¦…ë‹ˆë‹¤.
+    // Ãß»ó Å¬·¡½º´Â ÀÎÅÍÆäÀÌ½º¿Í ºñ½ÁÇÑ °³³äÀÌÁö¸¸, ÀÎÅÍÆäÀÌ½º¿Í ´Þ¸® º¯¼ö¸¦ °¡Áú ¼ö ÀÖ½À´Ï´Ù.
+    // ¶ÇÇÑ, ÀÎÅÍÆäÀÌ½º¿Í ´Þ¸® ¸öÃ¼(body)°¡ ÀÖ´Â ¸Þ¼­µå¸¦ °¡Áú ¼ö ÀÖ½À´Ï´Ù. (ÀÌ´Â ÀÚ¹Ù 8ºÎÅÍ ¿ÏÈ­µÇ¾î ÀÎÅÍÆäÀÌ½º´Â default Å°¿öµå¸¦ »ç¿ëÇÏ¿© ¸öÃ¼°¡ ÀÖ´Â ¸Þ¼­µå¸¦ °¡Áú ¼ö ÀÖ½À´Ï´Ù.)
+    // Ãß»ó Å¬·¡½º´Â ÀÏ¹Ý Å¬·¡½º¿Í °ÅÀÇ °°Áö¸¸, Ãß»ó ¸Þ¼­µå(abstract)¸¦ ¼±¾ðÇÒ ¼ö ÀÖ´Â°Í°ú ÀÎ½ºÅÏ½º¸¦ »ý¼ºÇÒ ¼ö ¾ø´Â °ÍÀÌ ´Ù¸¨´Ï´Ù.
     //
-    // abstractëŠ” í•´ë‹¹ ë©”ì„œë“œê°€ ëª¸ì²´(body)ê°€ ì—†ëŠ” ë©”ì„œë“œìž„ì„ ëª…ì‹œí•©ë‹ˆë‹¤. ì´ëŸ¬í•œ ë©”ì„œë“œëŠ” í•´ë‹¹ í´ëž˜ìŠ¤ë¥¼ ìƒì†í•œ í´ëž˜ìŠ¤ì—ì„œ ë°˜ë“œì‹œ êµ¬í˜„í•´ì•¼ í•©ë‹ˆë‹¤.
-    // ë§Œì•½ ìƒì†ë°›ëŠ” í´ëž˜ìŠ¤ê°€ ì¶”ìƒ í´ëž˜ìŠ¤ì¼ ê²½ìš°, í•´ë‹¹ í´ëž˜ìŠ¤ëŠ” ì¶”ìƒ ë©”ì„œë“œë¥¼ ì„ ì–¸í•¨ì— ê°•ì œë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+    // abstract´Â ÇØ´ç ¸Þ¼­µå°¡ ¸öÃ¼(body)°¡ ¾ø´Â ¸Þ¼­µåÀÓÀ» ¸í½ÃÇÕ´Ï´Ù. ÀÌ·¯ÇÑ ¸Þ¼­µå´Â ÇØ´ç Å¬·¡½º¸¦ »ó¼ÓÇÑ Å¬·¡½º¿¡¼­ ¹Ýµå½Ã ±¸ÇöÇØ¾ß ÇÕ´Ï´Ù.
+    // ¸¸¾à »ó¼Ó¹Þ´Â Å¬·¡½º°¡ Ãß»ó Å¬·¡½ºÀÏ °æ¿ì, ÇØ´ç Å¬·¡½º´Â Ãß»ó ¸Þ¼­µå¸¦ ¼±¾ðÇÔ¿¡ °­Á¦µÇÁö ¾Ê½À´Ï´Ù.
     abstract static class Vehicle {
         private final String name;
 
@@ -46,11 +46,27 @@ public class AbstractionExample {
     }
 
 
-    static class Bicycle {
+    static class Bicycle extends Vehicle {
+        public Bicycle(String name) {
+            super(name);
+        }
+
+        @Override
+        public void run() {
+            System.out.println("Bicycle is running!");
+        }
 
     }
 
-    static class Motorcycle {
+    static class Motorcycle extends Vehicle {
+        public Motorcycle(String name) {
+            super(name);
+        }
+
+        @Override
+        public void run() {
+            System.out.println("Motorcycle is running!");
+        }
 
     }
 }
